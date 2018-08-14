@@ -36,7 +36,9 @@ public class Calculator {
                     throw new IllegalArgumentException();
             }
         } catch (ArithmeticException e) {
-           System.out.println("Вы ввели не верное значение" + "\n" + e.toString());
+            System.out.println("На ноль делить нельзя" + "\n" + e.toString());
+        } catch (NumberFormatException e) {
+            System.out.println("Вы ввели не верное значение!");
         }
     }
 }

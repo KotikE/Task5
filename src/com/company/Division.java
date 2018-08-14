@@ -9,11 +9,15 @@ public class Division implements Operation{
         this.list = list;
     }
     public double calculate(ArrayList args) {
-        double proizv = Double.parseDouble(args.get(1).toString());
+        double delenie = Double.parseDouble(args.get(1).toString());
         for (int i = 2; i < args.size(); i++) {
-            proizv /= Double.parseDouble(args.get(i).toString());
+            if (!args.get(i).equals("0")) {
+                delenie /= Double.parseDouble(args.get(i).toString());
+            } else {
+                throw new ArithmeticException();
+            }
         }
-        return proizv;
+        return delenie;
     }
 
     public ArrayList getList() {
